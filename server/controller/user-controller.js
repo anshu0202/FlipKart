@@ -68,7 +68,6 @@ export const userLogin= async(req, res)=>{
      if(pass){
          user=uu;
      }
-
         // let user= await User.findOne({username:username, password:password})
         console.log("data  from backend is ", user)
         if(user){

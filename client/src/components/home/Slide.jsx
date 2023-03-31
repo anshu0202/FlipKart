@@ -4,6 +4,7 @@ import Carousel from 'react-multi-carousel';
 
 import 'react-multi-carousel/lib/styles.css'
 import Countdown from 'react-countdown';
+import { Link } from 'react-router-dom';
 
 import {Box, Typography,Divider ,Button,styled} from '@mui/material'
 
@@ -65,10 +66,15 @@ const Image= styled('img')({
     height:150
 })
 
+const Text=styled(Typography)`
+  font-size:14px;
+  margin-top:5px;
+`
 
 
 
-const Slider= ({products})=>{
+
+const Slider= ({products, title, timer})=>{
 
     const timerURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg';
 
@@ -85,15 +91,18 @@ const Slider= ({products})=>{
     <Component>
         <Deal>
             <DealText>
-                Deal of the Day
+                {title}
             </DealText>
 
+            {
+                        timer &&
             <Timer>
                 <img src={timerURL} alt="timer" style={{width:"24px"}} />
                   {/* time is given in milli second */}
                 <Countdown  date={Date.now()+ 5.04e+7}  renderer={renderer}    />
 
             </Timer>
+}
 
             <ViewAllButton variant='contained' color="primary" >
                 View All
@@ -113,14 +122,26 @@ const Slider= ({products})=>{
     centerMode={true}
     itemClass="carousel-item-padding-40-px" containerClass='carousel-container'
 dotListClass="custom-dot-list-style"
-    
     >
             {
                 products.map(product=>(
-
+                    <Link  to={`/product/${product.id}`} style={{textDecoration:'none'}} >
                     <Box  textAlign="center" style={{padding:"25px 15px"}}  >
                     <Image src={product.url} alt="products" />
+                    <Text  style={{fontWeight:600,color:'#212121'}} >
+
+
+                        {product.title.shortTitle}
+                    </Text>
+
+                        <Text  style={{color:"green"}}  >
+                            {product.discount}
+                        </Text>
+                      <Text  style={{color:"#212121", opacity:'0.6'}}  >
+                        {product.tagline}
+                      </Text>
                     </Box>
+                    </Link>
                 ))
             }
 
