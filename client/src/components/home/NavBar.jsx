@@ -5,6 +5,7 @@ import {navData} from '../../constants/data'
 const Component=styled(Box)(({theme})=>({
     display:"flex",
     margin:"55px 130px 0" ,
+   
     justifyContent:"space-between",
     overflow:"hidden",
     [theme.breakpoints.down('lg')]:{
@@ -28,6 +29,7 @@ const Text=styled(Typography)`
 
 const NavBar=()=>{
     return (
+        <Box style={{backgroud:"#fff"}}> 
         <Component >
             {
                 navData.map(data=>(
@@ -38,6 +40,7 @@ const NavBar=()=>{
                 ))
             }
         </Component>
+        </Box>
     )
 }
 

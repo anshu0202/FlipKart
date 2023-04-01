@@ -60,15 +60,13 @@ const Search=()=>{
           <InputSearchBase onChange={(e)=>getText(e.target.value)}  value={text}   placeholder="Search for products,brands and more "  />
           <SearchIconWrapper>       
           <SearchIcon/> </SearchIconWrapper>
-
             {
               text &&
                <ListWrapper style={{cursor:"pointer"}} >
                  {
-                    products.filter(product=> product.title.longTitle.toLowerCase().includes(text.toLowerCase())).map(product=>(
-                      <ListItem>
-                        
-                          <Link to={`/product/${product.id}`} onClick={()=>setText("")} style={{textDecoration:"none", color:"inherit"}}>
+                    products.filter(product=> product.title.longTitle.toLowerCase().includes(text.toLowerCase())).map( (product,id)=>(
+                      <ListItem>            
+                          <Link  key={id} to={`/product/${product.id}`} onClick={()=>setText("")} style={{textDecoration:"none", color:"inherit"}}>
                           {
                           product.title.longTitle
 }
@@ -79,9 +77,6 @@ const Search=()=>{
                 }
                 </ListWrapper>
             }
-
-
-
           </SearchContainer>
  )
 }
