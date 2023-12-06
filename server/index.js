@@ -13,7 +13,7 @@ import jwt from "jsonwebtoken";
 const app = express();
 app.use(
   cors({
-    origin: "*",
+    origin: "https://smart-mart.vercel.app/",
   })
 );
 
