@@ -41,7 +41,7 @@ const Banner = ()=>{
         autoPlaySpeed={3000}
     dotListClass="custom-dot-list-style" itemClass="carousel-item-padding-40-px" containerClass='carousel-container'  >
            {
-            bannerData.map(data=>(
+            bannerData?.map(data=>(
                 <Image src={data.url} alt="banner" />
             ))
            }

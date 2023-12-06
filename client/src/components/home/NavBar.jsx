@@ -32,7 +32,7 @@ const NavBar=()=>{
         <Box style={{backgroud:"#fff"}}> 
         <Component >
             {
-                navData.map(data=>(
+                navData?.map(data=>(
                     <Container>
                         <img src={data.url} alt={data.text} style={{width:64}} />
                         <Text>{data.text}</Text>

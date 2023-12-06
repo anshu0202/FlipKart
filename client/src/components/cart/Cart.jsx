@@ -65,7 +65,7 @@ const Cart=()=>{
                         </Header>
                     </Box>
                     {
-                        cartItems.map(item=>(
+                        cartItems?.map(item=>(
                             <CartItem  item={item}/>
                         ))
                     }

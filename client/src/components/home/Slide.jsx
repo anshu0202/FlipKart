@@ -124,7 +124,7 @@ const Slider= ({products, title, timer})=>{
 dotListClass="custom-dot-list-style"
     >
             {
-                products.map(product=>(
+                products?.map(product=>(
                     <Link  to={`/product/${product.id}`} style={{textDecoration:'none'}} >
                     <Box  textAlign="center" style={{padding:"25px 15px"}}  >
                     <Image src={product.url} alt="products" />
