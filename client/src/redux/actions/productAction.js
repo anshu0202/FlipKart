@@ -12,6 +12,7 @@ export const getProducts= ()=>async(dispatch)=>{
       
     try{
 
+        console.log("url is ",URL)
         const {data}= await axios.get(`${URL}/products`)
         dispatch({type:actionTypes.GET_PRODUCTS_SUCCESS, payload:data})
     }
