@@ -3,7 +3,7 @@ import Product from "../model/product-schema.js"
 
 
 export const getProducts= async (req, res)=>{
-        console.log("fun is called")
+       //  console.log("fun is called")
      try{
 
        const products= await Product.find({});

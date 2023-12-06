@@ -49,7 +49,7 @@ const securePassword= async( password )=>{
 // securePassword("anshu@123");
 
 const createToken= async ()=>{
-     console.log("hii")
+     // console.log("hii")
  const token =  await jwt.sign({_id:"640324081a44c276fb764b60"},"secretkey")
  console.log("token is ", token)
    //secret key require minimum 32 characters
@@ -62,7 +62,12 @@ const createToken= async ()=>{
 createToken();
 
 
-DefaultData();
+// DefaultData();
+
+
+app.get("/" , (req,res)=>{
+     res.send("Welcome to Flipkart Server !!!!")
+})
 
 
 app.listen(PORT,()=>{

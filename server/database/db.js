@@ -12,7 +12,7 @@ export const Connection=async (username, password)=>{
          catch(error){
             console.log("Error while connecting is ", error.message)
          }
-         // console.log("jjuju")
+        
 }
 
 export default Connection;
