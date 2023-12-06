@@ -5,7 +5,7 @@ import axios from "axios";
 import * as actionType from "../constants/cardConstants";
 
 
-const URL="http://localhost:5000";
+const URL=process.env.REACT_APP_BACK_URL;
 
 
 

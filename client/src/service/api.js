@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 
-const URL="http://localhost:5000"
+const URL=process.env.REACT_APP_BACK_URL;
 
 
 export const authenticateSignup= async(data)=>{

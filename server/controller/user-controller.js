@@ -55,20 +55,16 @@ export const userLogin= async(req, res)=>{
         const password=req.body.password;
 
         const uu=await User.findOne({username:req.body.username})
-         console.log("console uu is ",uu)
+
         const pass= await bcrypt.compare(password,uu.password) 
-        console.log("pass is ", pass)
-        // console.log("hash password is ",)
 
 
-        // const p=await bcrypt.hash(req.body.password,10);
-        // let user= await User.findOne({username:username, password:p})
-
+      
         let user;
      if(pass){
          user=uu;
      }
-        // let user= await User.findOne({username:username, password:password})
+      
         console.log("data  from backend is ", user)
         if(user){
                 return res.status(200).json({data:user})
